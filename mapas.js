@@ -1,15 +1,17 @@
+var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
 var markers = [
     {
         name: 'Trujillo', 
         label: 'T',
         position: {lat:-8.1120408, lng:-79.028485},
-        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        icon: iconBase +'library_maps.png',
         content: '<h4>Capital of La Libertad</h4>'
     },
     {
         name: 'La Esperanza',
         position: {lat:-8.058065, lng:-79.055249},
+        icon: iconBase +'parking_lot_maps.png',
         content: '<h4>La Esperanza Disctrict</h4>'
     },
     {
@@ -23,7 +25,6 @@ var markers = [
     {
         name: 'Lima, Peru',
         position: {lat: -12.049, lng: -77.0282},
-        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
         content: '<h4>Capital of Peru</h4>'
     }
 ]
@@ -56,8 +57,8 @@ function initMap(){
 
     var charac_Map2 = {
         zoom: 10,
-        center: {lat: -12.049, lng: -77.0282}
-        //mapTypeId: google.maps.MapTypeId.SATELLITE,
+        center: {lat: -12.049, lng: -77.0282},
+        mapTypeId: 'hybrid'
     };
 
     var mapa1 = new google.maps.Map( document.getElementById('map1'), charac_Map1);
@@ -76,10 +77,6 @@ function initMap(){
             createInfoWindow(marker).open(marker.map, marker);
         });
     });
-
-
-    
-
 
     var geocoder = new google.maps.Geocoder();
 
